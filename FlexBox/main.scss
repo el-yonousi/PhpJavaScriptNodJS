@@ -1,0 +1,472 @@
+:root {
+    --color-blueviolet: blueviolet;
+    --color-blueviolet-dark: #66339991;
+    --color-rebeccapurple: rebeccapurple;
+    --color-white: white;
+    --color-whitesmoke: whitesmoke;
+    --color-red: #fa4067;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: var(--color-blueviolet);
+    background-image: url("https://images.unsplash.com/photo-1628615392498-ebbab3eb54d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTk1MzF8MHwxfGFsbHw0fHx8fHx8Mnx8MTYyODY0NzMyNw&ixlib=rb-1.2.1&q=80&w=1080");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    display: grid;
+    background-color: var(--color-white) !important;
+    opacity: 0.8;
+    place-content: center;
+    i {
+        font-size: 100pt;
+        color: var(--color-rebeccapurple) !important;
+    }
+}
+
+nav {
+    // writing-mode: vertical-rl;
+    width: 4% !important;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background: var(--secondary-color);
+    height: 100vh;
+    a {
+        padding: 10px;
+        font-size: 20pt;
+        color: var(--color-white);
+        cursor: pointer;
+        // text-decoration: none;
+        // text-align: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // align-content: center;
+    }
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 96%;
+    height: 100%;
+    // margin-right: 0;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+
+    .search-image {
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 99;
+        input {
+            flex-basis: 60%;
+            padding: 10px;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            color: var(--color-rebeccapurple) !important;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .btn-search {
+            flex-basis: fit-content;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            color: var(--color-blueviolet-dark);
+            &:hover {
+                // background-color: var(--color-rebeccapurple);
+                color: var(--color-rebeccapurple);
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    section {
+        // top: 0;
+        // height: 100vh;
+        position: static;
+        right: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-flow: column;
+        // opacity: 0;
+        transition: all ease-in 0.5s;
+        bottom: 16px;
+        h1 {
+            color: var(--color-white);
+            font-size: 50px;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+        /* Styles applied on trigger */
+        &:target {
+            opacity: 1;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+
+    // global
+    .content {
+        padding: 16px;
+        column-count: 3;
+        column-gap: 0.1rem;
+        // width: 100%;
+        padding-bottom: 3.1rem !important;
+        // .landscape{
+        //     border: 1px solid red;
+        // }
+        // .portrait{
+        //     border: 1px solid blue;
+        // }
+        // .normal{
+        //     border: 1px solid yellow;
+        // }
+        .card {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            background-color: var(--color-blueviolet);
+            padding: 0 5px;
+            margin: 5px;
+            border-radius: 5px;
+            &:hover {
+                background-image: linear-gradient(90deg, var(--color-blueviolet), var(--color-rebeccapurple));
+            }
+            .card-text {
+                color: var(--color-whitesmoke);
+                font-size: small;
+                font-weight: lighter;
+                padding: 6px 0;
+            }
+            .card-img {
+                width: 100%;
+                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                vertical-align: middle;
+                border-radius: 5px;
+            }
+            .btn-primary {
+                margin: 3px;
+                padding: 6px;
+                outline: none;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                i {
+                    color: var(--color-whitesmoke);
+                    font-size: 16pt;
+                }
+            }
+            .btn-save {
+                float: right;
+                background-color: transparent;
+                i {
+                    color: var(--color-whitesmoke);
+                }
+            }
+        }
+    }
+
+    #home {
+        // background: var(--primary-color);
+        width: fit-content;
+    }
+    #pictures {
+        // background: var(--complimentary-color);
+        width: 100%;
+        top: 0;
+        display: grid;
+        place-items: center;
+
+        .picture-add {
+            border-radius: 6px;
+            padding: 16px;
+            height: 100%;
+            width: 100%;
+            z-index: 99;
+            background-color: var(--color-whitesmoke);
+            display: grid;
+            place-items: center;
+            .btn-close {
+                align-self: flex-end;
+                float: right;
+                place-self: end;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                i {
+                    font-size: 16pt;
+                    color: var(--color-blueviolet);
+                }
+            }
+            .picture-form {
+                border: 1px solid var(--color-blueviolet) !important;
+                width: 100%;
+                background-color: var(--color-whitesmoke);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 16px;
+                border-radius: 3px;
+                label {
+                    font-weight: bold;
+                    font-size: small;
+                    margin-top: 6px;
+                }
+                input {
+                    padding: 6px;
+                    border-radius: 3px;
+                    outline: none;
+                    border: none;
+                }
+                input[type="button"] {
+                    margin-top: 10px;
+                    cursor: pointer;
+                    background-color: var(--color-rebeccapurple);
+                    color: var(--color-whitesmoke);
+                    padding: 6px 12px;
+                }
+                .titleError,
+                .urlError {
+                    color: var(--color-red);
+                }
+
+                .picture-buttons {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    #about {
+        // background: var(--contrast-color);
+        width: fit-content;
+    }
+
+    #contact {
+        // background: var(--light-color);
+        width: fit-content;
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 2560px) {
+    .content {
+        /* It is split into 3 columns */
+        column-count: 5 !important;
+    }
+    .picture-add {
+        width: 60% !important;
+    }
+}
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    .content {
+        /* It is split into 3 columns */
+        column-count: 4 !important;
+    }
+    .picture-add {
+        width: 70% !important;
+    }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .content {
+        /* It is split into 3 columns */
+        column-count: 3 !important;
+    }
+    .picture-add {
+        width: 80% !important;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content {
+        column-count: 3 !important;
+    }
+    .picture-add {
+        width: 80% !important;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .content {
+        column-count: 3 !important;
+    }
+    .picture-add {
+        width: 80% !important;
+    }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .content {
+        /* It is split into 3 columns */
+        column-count: 2 !important;
+        padding: 6px !important;
+    }
+    .picture-add {
+        width: 80% !important;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    nav {
+        // writing-mode: vertical-rl;
+        width: 100% !important;
+        flex-direction: row !important;
+        bottom: 0 !important;
+        height: 4% !important;
+        // margin-bottom: 0.6em !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-content: center !important;
+        align-items: center !important;
+        // background-color:var(--color-blueviolet);
+        padding: 1.2em !important;
+        a {
+            padding: 0 !important;
+        }
+    }
+    .container {
+        width: 100% !important;
+        .content {
+            /* It is split into 3 columns */
+            column-count: 2 !important;
+            padding: 6px !important;
+        }
+        .picture-add {
+            width: 80% !important;
+        }
+    }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    nav {
+        // writing-mode: vertical-rl;
+        width: 100% !important;
+        flex-direction: row !important;
+        bottom: 0 !important;
+        height: 4% !important;
+        // margin-bottom: 0.6em !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-content: center !important;
+        align-items: center !important;
+        // background-color:var(--color-blueviolet);
+        padding: 1.2em !important;
+        a {
+            padding: 0 !important;
+        }
+    }
+    .container {
+        width: 100% !important;
+    }
+
+    .content {
+        /* It is split into 3 columns */
+        column-count: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        .card {
+            margin: 5px 0px !important;
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 320px) {
+    nav {
+        // writing-mode: vertical-rl;
+        width: 100% !important;
+        flex-direction: row !important;
+        bottom: 0 !important;
+        height: 4% !important;
+        // margin-bottom: 0.6em !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-content: center !important;
+        align-items: center !important;
+        // background-color:var(--color-blueviolet);
+        padding: 1.2em !important;
+        a {
+            padding: 0 !important;
+        }
+    }
+    .container {
+        width: 100% !important;
+    }
+    .content {
+        /* It is split into 3 columns */
+        column-count: 1 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        .card {
+            margin: 5px 0px !important;
+        }
+    }
+}

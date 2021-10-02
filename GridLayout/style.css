@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+body {
+  background-color: purple;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  background-color: palevioletred;
+  background-blend-mode: multiply;
+  width: 90%;
+  height: 100vh;
+  margin: 5% auto;
+  padding: 16px;
+  border-radius: 5px;
+  font-weight: 700;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 5px;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  -ms-grid-columns: 15% auto;
+      grid-template-columns: 15% auto;
+  -ms-grid-rows: 100px auto fit-content;
+      grid-template-rows: 100px auto -webkit-fit-content;
+      grid-template-rows: 100px auto fit-content;
+      grid-template-areas: "m h" "m c" "m f";
+}
+
+.container .header {
+  text-align: center;
+  background-color: darkorchid;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: h;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .header div {
+  background-color: #1deee3;
+}
+
+.container .menu {
+  text-align: center;
+  background-color: blueviolet;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: m;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container .menu div {
+  background-color: #df5aba;
+}
+
+.container .content {
+  text-align: center;
+  background-color: violet;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: c;
+  overflow-y: scroll;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 5px;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+}
+
+.container .content .horizontal {
+  grid-column: span 2;
+}
+
+.container .content .vertical {
+  grid-column: span 2;
+}
+
+.container .content .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.container .content div {
+  padding-bottom: 16px;
+  background-color: yellow;
+  color: black;
+  text-align: center start;
+  word-wrap: break-word;
+}
+
+.container .footer {
+  text-align: center;
+  background-color: darkmagenta;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .footer div {
+  background-color: #f109d2;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+        grid-template-areas: "m h" "c c" "f f";
+  }
+  .container .menu > * {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+/*# sourceMappingURL=style.css.map */

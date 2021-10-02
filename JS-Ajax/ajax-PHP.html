@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax - PHP</title>
+</head>
+
+<body>
+    <button id="button">Get Name</button>
+
+    <form id="form">
+        <input type="text" id="name">
+        <input type="submit" id="submit" value="Submit">
+    </form>
+
+    <form id="formPost">
+        <input type="text" id="namePost">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.querySelector('#button').addEventListener('click', getName)
+
+        function getName()
+        {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', 'process.php?name=Mohamed', true)
+
+            xhr.onload = function ()
+            {
+                console.log(this.responseText);
+            }
+
+            xhr.send()
+        }
+    </script>
+
+    <script>
+        const form = document.querySelector('#form')
+        form.addEventListener('submit', getNameForm)
+
+        function getNameForm(e)
+        {
+            e.preventDefault();
+
+            let name = form.elements['name'].value
+
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', `process.php?name=${name}'`, true)
+
+            xhr.onload = function ()
+            {
+                console.log(this.responseText);
+            }
+
+            xhr.send()
+        }
+    </script>
+
+    <script>
+        const formPost = document.querySelector('#formPost')
+        formPost.addEventListener('submit', getNameForm)
+
+        function getNameForm(e)
+        {
+            e.preventDefault();
+
+            let name = formPost.elements['namePost'].value
+            const body = `name=${name}`
+
+            const xhr = new XMLHttpRequest()
+            xhr.open('POST', 'process.php', true)
+            xhr.setRequestHeader('Content-type',
+                'application/x-www-form-urlencoded')
+
+            xhr.onload = function ()
+            {
+                console.log(this.responseText);
+            }
+
+            xhr.send(body)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax XMLHttpRequest</title>
+</head>
+
+<body>
+    <button id="button">Get text File</button>
+    <div id="text"></div>
+    <script>
+        document.querySelector('#button').addEventListener('click', loadText);
+        function loadText()
+        {
+            // create XHR (XMLHttpRequest) Object
+            const xhr = new XMLHttpRequest();
+
+            // open (type , url/file, async_
+            xhr.open('GET', 'sample.txt', true);
+
+            // optional -used for loaders
+            xhr.onprogress = function ()
+            {
+                document.querySelector('#text').innerHTML = 'loading..'
+                console.log('READYSTATE', xhr.readyState);
+            }
+
+            xhr.onload = function ()
+            {
+                if (this.status == 200) {
+                    // console.log({ onload: this.responseText });
+                    document.querySelector('#text').innerHTML = this.responseText
+                }
+                else if (this.status == 404) {
+                    document.querySelector('#text')
+                        .innerHTML = 'File Not Found'
+                }
+            }
+            xhr.onerror = function ()
+            {
+                console.log('Request Error..');
+            }
+
+            xhr.onreadystatechange = function ()
+            {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log({ onreadystatechange: this.responseText });
+                }
+
+            }
+
+            // send request
+            xhr.send()
+        }
+        /** readyState values
+         * 0: request not initialized
+         * 1: server connectn established
+         * 2: request received
+         * 3: processing request
+         * 4: request finished and response is ready
+         **/
+
+        /**
+        * HTTP Status
+        * 200: "OK"
+        * 403: "Forbidden"
+        * 404: Not Found
+        **/
+    </script>
+</body>
+
+</html>

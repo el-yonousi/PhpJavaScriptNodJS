@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is a mazing case true test">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/283219780b.css">
+    <link rel="stylesheet" href="index.css" />
+    <title>Login-CASETRUE</title>
+
+</head>
+
+<body id="login">
+    <header class="loader" style="visibility: hidden;">
+        <i class="fa fa-spinner fa-spin"></i>
+    </header>
+    <div class="navbar">
+        <div class="menu">
+            <ul class="nav">
+                <li class="item">
+                    <a href="index.html" rel="noreferrer">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span id="usernamelogin">home</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="profile">
+            <ul class="navprofile">
+                <li class="item">
+                    <a href="index.html" rel="noreferrer">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>sign in
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="register.html" rel="noreferrer">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>sing up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="login">
+        <div class="container">
+            <form class="form" id="form" action="" method="">
+                <label for="username">Username Or Email</label>
+                <div class="user">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="email" name="username" id="username" required autocomplete="username">
+                </div>
+                <small class="error" id="emailError"></small><br />
+                <label for="password">Password</label>
+                <div class="user">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    <input type="password" name="password" id="password" required autocomplete="current-password">
+                </div>
+                <small class="error" id="passwordError"></small><br />
+                <input type="button" id="submit" value="Sign in">
+                <small>or <a href="register.html" rel="noreferrer"><em>sign up</em></a></small>
+            </form>
+            <div class="picture">
+                <div class="background">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

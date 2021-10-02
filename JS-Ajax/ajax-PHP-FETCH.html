@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax - PHP-FETCH</title>
+</head>
+
+<body>
+
+    <button id="button">Get Users</button>
+
+    <div id="users"></div>
+
+    <script>
+        document.querySelector('#button').addEventListener('click', getUsersFromFetch);
+        function getUsersFromFetch()
+        {
+            const xhr = new XMLHttpRequest()
+
+            xhr.open('GET', 'users.php', true)
+
+            xhr.onload = function ()
+            {
+                const users = JSON.parse(this.responseText)
+                let outputs = ''
+                if (this.status == 200) {
+                    users.map(item =>
+                    {
+                        outputs +=
+                            /*html*/
+                            `<h3>ID:: ${item.id}</h3>
+                            <p>Name:: ${item.name}</p>`
+                    })
+                }
+                document.querySelector('#users').innerHTML = outputs
+            }
+            xhr.send()
+        }
+    </script>
+</body>
+
+</html>

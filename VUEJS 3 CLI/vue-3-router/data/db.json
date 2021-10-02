@@ -1,0 +1,19 @@
+{
+    "jobs": [
+        {
+            "title": "first job",
+            "id": 1,
+            "details": "lorem"
+        },
+        {
+            "title": "second job",
+            "id": 2,
+            "details": "lorem"
+        },
+        {
+            "title": "third job",
+            "id": 3,
+            "details": "lorem "
+        }
+    ]
+}

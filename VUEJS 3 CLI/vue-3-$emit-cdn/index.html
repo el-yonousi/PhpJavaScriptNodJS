@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav-bar"
+            style="position: fixed; right: 0; border: 1px solid red; padding: 16px; background-color: yellowgreen; color: white; display: flex; flex-direction: row; justify-content: flex-end; justify-self: flex-end; align-items: flex-end; align-content: flex-end; width: fit-content; max-width: 100%;">
+            <p>cart({{cart}})</p>
+
+        </div>
+        <product-display :ids="'WSAS'" :premium="premium" :sizes="sizes" @add-to-card="addToCartMain"
+            @remove-from-card="aremoveFromCartMain"></product-display>
+        <product-display :ids="'WSAS'" :premium="premium" :sizes="sizes" @add-to-card="addToCartMain"
+            @remove-from-card="aremoveFromCartMain"></product-display>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+    <!-- import app -->
+    <script src="main.js"></script>
+
+    <!-- import productComponent -->
+    <script src="components/ProductDisplay.js"></script>
+
+    <!-- import reviewComponent -->
+    <script src="components/ReviewForm.js"></script>
+
+    <!-- import reviewListComponent -->
+    <script src="components/ReviewList.js"></script>
+
+    <!-- mount app -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+
+</html>

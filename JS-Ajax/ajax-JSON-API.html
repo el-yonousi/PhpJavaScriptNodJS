@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax JSON API Github</title>
+</head>
+
+<body>
+
+    <button id="button">Load Data</button>
+    <br><br>
+    <h1>Github Users</h1>
+    <div id="users"></div>
+
+    <script>
+
+        document.querySelector('#button').addEventListener('click', loadUsers)
+        function loadUsers()
+        {
+            const xhr = new XMLHttpRequest()
+            xhr.open('GET', 'https://api.github.com/users', true)
+
+            xhr.onload = function ()
+            {
+                if (this.status == 200) {
+                    const users = JSON.parse(this.responseText)
+                    let outputs = ''
+                    users.map(item =>
+                    {
+                        outputs +=
+                            /*html*/
+                            `
+                            <h1>${item.login}</h1>
+                            <img src="${item.avatar_url}" width="100" height = "100">
+                            `
+                    })
+
+
+                    document.querySelector('#users').innerHTML = outputs
+                }
+            }
+
+            xhr.send()
+        }
+
+    </script>
+
+</body>
+
+</html>

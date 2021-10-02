@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "6df0920e-b86b-4294-886d-ae9c1cfc98d6",
+		"name": "DevinWeb-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List available courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_password\": \"HrIbKRienabblJC3IZbjyEzH6AZLA8JmtuB6RqD\",\r\n    \"email\": \"jett59@example.org\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/schools/1/courses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schools",
+						"1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll in a course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_password\": \"HrIbKRienabblJC3IZbjyEzH6AZLA8JmtuB6RqD\",\r\n    \"email\": \"jett59@example.org\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/schools/1/courses/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schools",
+						"1",
+						"courses",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_password\": \"HrIbKRienabblJC3IZbjyEzH6AZLA8JmtuB6RqD\",\r\n    \"password\": \"Pass1234\",\r\n    \"email\": \"elyonousimohamed@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/schools/1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schools",
+						"1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_password\": \"HrIbKRienabblJC3IZbjyEzH6AZLA8JmtuB6RqD\",\r\n    \"name\":\"Mohamed EL YONOUSI\",\r\n    \"email\": \"elyonousimohamed@gmail.com\",\r\n    \"password\": \"Pass1234\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/schools/1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schools",
+						"1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

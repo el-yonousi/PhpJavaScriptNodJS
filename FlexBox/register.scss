@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rebeccapurple;
+}
+
+.navbar {
+    background-color: indigo;
+    display: flex;
+    width: 100%;
+
+    .menu {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        .nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: left;
+            .item {
+                list-style: none;
+                padding: 16px 0;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+        }
+    }
+    .profile {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        flex-shrink: 1;
+        .navprofile {
+            display: flex;
+            .item {
+                list-style: none;
+                padding: 16px 0;
+                flex-grow: 0;
+                flex-shrink: 1;
+            }
+        }
+    }
+
+    a {
+        padding: 16px;
+        color: pink !important;
+        text-decoration: none;
+        text-transform: uppercase;
+        i {
+            color: pink !important;
+            padding-right: 5px;
+        }
+        &:hover {
+            background-color: #ffaa00;
+            color: whitesmoke !important;
+            i {
+                color: whitesmoke !important;
+            }
+        }
+    }
+}
+
+.register {
+    padding: 16px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 30%;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        flex-wrap: wrap;
+        background-color: seashell;
+        flex-shrink: 1;
+        border-radius: 5px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+
+        .form {
+            width: 18rem;
+            padding: 16px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-content: center;
+            font-weight: bold;
+            flex-wrap: wrap;
+            color: rebeccapurple;
+            .error {
+                color: #fd0606;
+                font-weight: normal;
+            }
+            .info {
+                flex-grow: 1;
+                flex-shrink: 1;
+                align-self: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background-color: slateblue;
+                color: whitesmoke;
+                padding: 6px 6px 6px 0;
+                border-radius: 3px;
+                i {
+                    padding: 6px;
+                    align-self: center;
+                }
+                input {
+                    outline: none;
+                    border: 0px;
+                    padding: 6px;
+                    border-radius: 3px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: flex-start;
+                    align-self: flex-end;
+                    align-content: flex-end;
+                    flex-wrap: wrap;
+                }
+            }
+
+            input[type="button"] {
+                outline: none;
+                border: 0px;
+                margin-top: 10px;
+                padding: 10px;
+                border-radius: 3px;
+                width: auto;
+                background-color: rebeccapurple;
+                color: whitesmoke;
+                font-size: medium;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover {
+                    color: seashell;
+                    background-color: slateblue;
+                    border: 1px solid rebeccapurple;
+                }
+            }
+        }
+
+        .picture {
+            flex-grow: 1;
+            flex-shrink: 1;
+            width: 18rem;
+            height: 18rem;
+            padding: 10px;
+            align-self: center;
+            .background {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                color: slateblue;
+                background-image: url("https://source.unsplash.com/1080x1000/?creative,ambition");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: local;
+            }
+        }
+    }
+}
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    display: grid;
+    background-color: #fff;
+    opacity: 0.8;
+    place-content: center;
+    i {
+        font-size: 100pt !important;
+        color: rebeccapurple;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 2560px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 5;
+    }
+}
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 4;
+    }
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 3;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        column-count: 3;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .container {
+        column-count: 3;
+    }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 2;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 2;
+    }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 1;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 320px) {
+    .container {
+        /* It is split into 3 columns */
+        column-count: 1;
+    }
+}

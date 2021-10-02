@@ -1,0 +1,7 @@
+API Routes => The file ***DevinWeb-Api.postman_collection.json*** contain all api routes.
+
+=====
+php artisan migrate
+
+=====
+php artisan db:seed

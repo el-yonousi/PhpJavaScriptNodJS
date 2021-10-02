@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Static Vue JS</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <!-- toggle to open or closs section -->
+        <div class="toggle nav" :class="{navOpen: !toggle}">
+            <div class="close"><i @click="open" v-if="!hide" class="fas fa-angle-double-left"></i></div>
+            <div class="open"><i @click="open" v-if="hide" v-if="!toggle" class="fas fa-angle-double-right"></i></div>
+            <div>
+                <ul>
+                    <li v-for="menu in menus" :key=menu.id @click="setActiveClass(menu.id)">
+                        <a :href="'#'+menu.href" type="button" :class="{ active: selectedIndex === menu.id}">
+                            <i class="icon" :class="menu.icon"></i>
+                            <span v-if="toggle">{{menu.item}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content" :class="{contentOnClose : !toggle}">
+            <!-- home -->
+            <section id="home" class="section">
+                <div class="home">
+                    <div class="box" v-for="book in filteredBoxes"
+                        :style="{ backgroundImage: 'url(\'' + book.img + '\')' }" :alt="book.title"
+                        @click="isFavorite(book)" :class="{favorite: book.isFav}">
+                        <p>Title: {{book.title}}</p>
+                        <span style="font-weight: normal;">Author: {{book.author}}</span><br />
+                        <span style="font-weight: normal;">Date: {{book.date}}</span>
+                    </div>
+                    <!-- on mouse events -->
+                    <!-- <div class="box" @mouseover="handlEvent">mouse over (enter)</div>
+                    <div class="box" @mouseleave="handlEvent($event,'Mohamed')">mouse leave</div>
+                    <div class="box" @dblclick="handlEvent">double click</div>
+                    <div class="box" @mousemove="handleMouseMouve">(X: {{x}}), (Y: {{y}})</div> -->
+                </div>
+            </section>
+
+            <!-- services -->
+            <section id="services" class="section">
+                <div class="services">
+                    <h1>this is a services info</h1>
+                    <input type="text" ref="input" />
+                    <button @click="tests(this.$refs.input.value)">click me</button>
+                    <p>this varivalue well be incremented: {{test}}</p>
+                </div>
+            </section>
+
+            <!-- about -->
+            <section id="about" class="section">
+                <div class="about">
+                    <h1>this is a about info</h1>
+                </div>
+            </section>
+
+            <!-- contact -->
+            <section id="contact" class="section">
+                <div class="contact">
+                    <h1>this is a contact info</h1>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+    <!-- active class -->
+    <!-- <script>
+        const navBar = document.querySelector('.navbar').querySelectorAll('.item');
+
+        navBar.forEach(element =>
+        {
+            element.addEventListener("click", () =>
+            {
+                navBar.forEach(nav => nav.classList.remove("active"));
+                element.classList.add("active");
+            })
+        })
+    </script> -->
+</body>
+
+</html>

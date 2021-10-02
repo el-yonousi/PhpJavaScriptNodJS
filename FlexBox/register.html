@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="register.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/eda9b3c78f.js"></script>
+    <title>Register-CASETRUE</title>
+</head>
+
+<body>
+
+    <header class="loader" style="visibility: hidden;">
+        <i class="fa fa-spinner fa-spin"></i>
+    </header>
+    <div class="navbar">
+        <div class="menu">
+            <ul class="nav">
+                <li class="item">
+                    <a href="index.html" rel="noreferrer">
+                        <span>casetrue</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="profile">
+            <ul class="navprofile">
+                <li class="item">
+                    <a href="index.html" rel="noreferrer">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>sign in
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="register.html" rel="noreferrer">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>sing up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="register">
+        <div class="container">
+            <form class="form" id="register">
+                <label for="name">Name</label>
+                <div class="info">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="name" id="name" required autocomplete="name">
+                </div>
+                <div class="error" id="errorName"></div>
+                <label for="email">Email</label>
+                <div class="info">
+                    <i class="fa fa-at"></i>
+                    <input type="email" name="email" id="email" required autocomplete="email">
+                </div>
+                <div id="errorEmail" class="error"></div>
+                <label for="password">Password</label>
+                <div class="info">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" id="password" required autocomplete="new-password">
+                </div>
+                <div id="errorPassword" class="error"></div>
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="info">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="confirmPassword" id="confirmPassword" required autocomplete="new-password">
+                </div>
+                <div id="errorConfirmPassword" class="error"></div>
+                <input type="button" value="Register" id="create">
+            </form>
+            <picture class="picture">
+                <!-- <img src="https://source.unsplash.com/1080x1000/?creative,ambition" alt="picture programming" srcset=""> -->
+                <div class="background">
+                
+                </div>
+                </picture>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+
+</html>
