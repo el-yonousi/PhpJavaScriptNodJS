@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'client',
+        title: 'fire-extenguisher',
         htmlAttrs: {
             lang: 'en'
         },
@@ -28,7 +28,7 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/eslint
-        // '@nuxtjs/eslint-module'
+        '@nuxtjs/eslint-module',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -36,7 +36,7 @@ export default {
         // https://go.nuxtjs.dev/bootstrap
         'bootstrap-vue/nuxt',
         // https://go.nuxtjs.dev/axios
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
