@@ -1,0 +1,18 @@
+{
+  "name": "first-nodejs-app",
+  "version": "1.0.0",
+  "description": "this is my first NodeJs application, and this is in chae llah my new may to MEVN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "MEVN"
+  ],
+  "author": "Mohamed EL YONOUSI",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
