@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body
+    nav(class="nav")
+      .nav-bar
+        span(onclick='routerHome()') home
+        span(onclick='routerAbout()') about 
+        span(onclick='routerContact()') contact
+
+    block content

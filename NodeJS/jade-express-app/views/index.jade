@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .index
+    .index-container
+      h1= title
+      p Welcome to #{title}
+      label(for="fulName") Full Name 
+      input(type="text" name="fullName", required, ref="mk" class="f_name" id="sayHi" maxlength="10")
+      input(type="button" value="Say Hii" onclick="sayHi('sayHi')")
+      -var fullName = "Mohamed EL YONOUSI"
+      if fullName === "Mohamed EL YONOUSI"
+        p #{fullName} Name
+      else 
+        p khaouda ZRAA
+      -const anyarray = [15,12,45,87,98]
+      each value in anyarray
+        p #{value}
+  script(src="/javascripts/index.js") 

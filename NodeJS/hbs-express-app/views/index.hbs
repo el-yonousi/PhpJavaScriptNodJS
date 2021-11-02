@@ -1,0 +1,110 @@
+<div class="index">
+    <div class="index-container">
+        <h1>{{title}}</h1>
+        <p>Welcome to {{title}}</p>
+
+        {{#if condition}}
+        <span>yes</span>
+        {{else}}
+        <span>no</span>
+        {{/if}}
+
+        {{#each anyarray as |val index|}}
+        <div id="{{index}}">
+            {{val}}
+        </div>
+        {{/each}}
+
+        <div class="index-container-content">
+            {{!-- post method --}}
+            <div {{#if success}}class="response success"{{/if}} class="response">
+
+                {{#if success}}
+                <div>post success request</div>
+                {{else}}
+                {{#each errors}}
+                <div class="error">{{this.msg}}</div>
+                {{/each}}
+                {{/if}}
+            </div>
+            <form action="/users/info" method="post" class="form">
+                <label for="login">login</label>
+                <input type="text" name="login" id="login" autocomplete="email">
+                <label for="password">password</label>
+                <input type="password" name="password" id="password">
+                <input type="submit" value="Connect">
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .index-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .index-container-content {
+        margin-top: 2em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .response {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: salmon;
+        padding: 16px;
+        border-radius: 6px;
+        margin-bottom: 3px;
+    }
+
+    .success{
+        background-color: turquoise;
+        color: whitesmoke;
+    }
+
+    .response>.error {
+        color: whitesmoke;
+        font-weight: bold;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        background-color: darkcyan;
+        padding: 16px;
+        border-radius: 6px;
+    }
+
+    .form>label {
+        color: whitesmoke;
+        font-size: medium;
+    }
+
+    .form>input {
+        padding: 10px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        margin-bottom: 10px;
+    }
+
+    .form>input[type="submit"] {
+        margin-top: 3em;
+        padding: 10px 16px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .form>input[type="submit"]:hover {
+        opacity: 0.8;
+    }
+</style>
