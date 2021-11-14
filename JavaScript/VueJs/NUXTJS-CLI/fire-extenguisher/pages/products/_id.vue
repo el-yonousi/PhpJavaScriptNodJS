@@ -2,12 +2,12 @@
   <div>
     <div v-if="product" class="container py-5">
       <div class="hero-container">
-        <!-- <img :src="require(`@/assets/images/${product.image}`)" alt="" class="image" /> -->
         <img class="image" :src="product.image" :alt="product.title" />
         <div class="info-box">
           <h1>{{ product.title }}</h1>
           <p class="snippet">{{ product.snippet }}</p>
-          <!-- <RentModal :product="product" /> -->
+          <!-- Rent Modal -->
+          <RentModal :product="product" />
         </div>
       </div>
       <div class="whats-included-container">
@@ -41,7 +41,8 @@
           {{ product.description }}
         </p>
       </div>
-      <!-- <Reviews /> -->
+      <!-- Reviews -->
+      <Reviews />
     </div>
     <div v-else class="container padding">
       <PageNotFound :params="$route.params.id" />
